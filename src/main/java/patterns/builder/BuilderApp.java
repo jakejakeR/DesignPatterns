@@ -6,13 +6,7 @@ public class BuilderApp {
 
     public static void main(String[] args) {
 
-        Hero mage = new Hero.Builder("Solmyr", Profession.MAGE)
-                .addHairType(HairType.BALD)
-                .addHairColor(HairColor.BLACK)
-                .addWeapon(Weapon.WARHAMMER)
-                .build();
-        System.out.println(mage.toString());
-
+        //region Hero builder
         Hero warrior = new Hero.Builder("Ragnar", Profession.WARRIOR)
                 .addHairType(HairType.SHORT)
                 .addHairColor(HairColor.BROWN)
@@ -21,5 +15,7 @@ public class BuilderApp {
                 .addSkill(Skill.LEADERSHIP)
                 .build();
         System.out.println(warrior.toString());
+        //endregion
+        
     }
 }
