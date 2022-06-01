@@ -8,6 +8,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Design patterns are cool." );
+        System.out.println( "This project is to learn about design patterns." );
     }
 }
