@@ -1,4 +1,4 @@
-package patterns.builder;
+package patterns.builder.hero;
 
 /**
  * Hero, the class with many parameters.
@@ -77,10 +77,10 @@ public final class Hero {
             sb.append(" wearing ").append(armor);
         }
         if (weapon != null) {
-            sb.append(" and wielding a/an ").append(weapon).append('.');
+            sb.append(" and wielding a/an ").append(weapon);
         }
         if (skill != null) {
-            sb.append(" Hero's main skill is ").append(skill);
+            sb.append(". Hero's main skill is ").append(skill);
         }
         sb.append('.');
         return sb.toString();
