@@ -5,7 +5,7 @@ package patterns.builder;
  */
 public enum Weapon {
 
-    SWORD, AXE, DAGGER, WAR_HAMMER, BOW;
+    SWORD, AXE, DAGGER, WARHAMMER, BOW;
 
     @Override
     public String toString() {
