@@ -1,7 +1,7 @@
 package patterns.factory.coins;
 
 /**
- * Coin interface
+ * Coin interface.
  */
 public interface Coin {
 
