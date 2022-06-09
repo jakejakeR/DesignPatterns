@@ -1,7 +1,8 @@
 package patterns.factory;
 
-import patterns.factory.notifications.Notification;
-import patterns.factory.notifications.NotificationFactory;
+import patterns.factory.cars.Car;
+import patterns.factory.cars.CarBrand;
+import patterns.factory.cars.CarFactory;
 
 public class FactoryApp {
 
@@ -9,8 +10,18 @@ public class FactoryApp {
 
         System.out.println("Factory design pattern practice\r\n");
 
-        NotificationFactory notificationFactory = new NotificationFactory();
-        Notification notification = notificationFactory.createNotification("SMS");
-        notification.notifyUser();
+        CarFactory carFactory = new CarFactory();
+
+        Car ferrari = carFactory.buildCar(CarBrand.FERRARI);
+        ferrari.introduce();
+        System.out.println(ferrari);
+
+        Car lambo = carFactory.buildCar(CarBrand.LAMBORGHINI);
+        lambo.introduce();
+        System.out.println(lambo);
+
+        Car porsche = carFactory.buildCar(CarBrand.PORSCHE);
+        porsche.introduce();
+        System.out.println(porsche);
     }
 }
