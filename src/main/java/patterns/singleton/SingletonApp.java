@@ -22,12 +22,26 @@ public class SingletonApp {
 
         System.out.println("Singleton design pattern practice\r\n");
 
-        // Enum singleton
-        EnumSingleton enumSingleton1 = EnumSingleton.INSTANCE;
-        EnumSingleton enumSingleton2 = EnumSingleton.INSTANCE;
+        // Enum singleton multithreaded test
+        Thread threadFoo = new Thread(new ThreadFoo());
+        Thread threadBar = new Thread(new ThreadBar());
+        threadFoo.start();
+        threadBar.start();
+    }
 
-        System.out.println(enumSingleton1);
-        System.out.println(enumSingleton2);
+    static class ThreadFoo implements Runnable {
+        @Override
+        public void run() {
+            EnumSingleton enumSingleton = EnumSingleton.INSTANCE;
+            System.out.println(enumSingleton);
+        }
+    }
 
+    static class ThreadBar implements Runnable {
+        @Override
+        public void run() {
+            EnumSingleton enumSingleton = EnumSingleton.INSTANCE;
+            System.out.println(enumSingleton);
+        }
     }
 }
