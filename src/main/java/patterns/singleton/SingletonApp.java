@@ -11,7 +11,7 @@ package patterns.singleton;
     with calls to its static creation method.
 */
 
-import patterns.singleton.singlethreaded.Singleton;
+import patterns.singleton.singlethreaded.EnumSingleton;
 
 /**
  * Good for managing a connection to a database
@@ -22,32 +22,12 @@ public class SingletonApp {
 
         System.out.println("Singleton design pattern practice\r\n");
 
-        // Singleton single-threaded
-        System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +
-                "If you see different values, then 2 singletons were created (booo!!)" + "\n\n" +
-                "RESULT:" + "\n");
+        // Enum singleton
+        EnumSingleton enumSingleton1 = EnumSingleton.INSTANCE;
+        EnumSingleton enumSingleton2 = EnumSingleton.INSTANCE;
 
-        // Checking how it would behave in multithreaded environment
-        Thread threadHello = new Thread(new ThreadHello());
-        Thread threadGoodbye = new Thread(new ThreadGoodbye());
+        System.out.println(enumSingleton1);
+        System.out.println(enumSingleton2);
 
-        threadHello.start();
-        threadGoodbye.start();
-
-    }
-
-    static class ThreadHello implements Runnable {
-        @Override
-        public void run() {
-            Singleton singleton = Singleton.getInstance("HELLO!");
-            System.out.println(singleton.getValue());
-        }
-    }
-    static class ThreadGoodbye implements Runnable {
-        @Override
-        public void run() {
-            Singleton singleton = Singleton.getInstance("GOODBYE!");
-            System.out.println(singleton.getValue());
-        }
     }
 }
