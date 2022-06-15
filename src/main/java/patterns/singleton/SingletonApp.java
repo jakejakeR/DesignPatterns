@@ -11,8 +11,6 @@ package patterns.singleton;
     with calls to its static creation method.
 */
 
-import patterns.singleton.singlethreaded.SingletonSingleThreaded;
-
 /**
  * Good for managing a connection to a database
  */
@@ -26,11 +24,21 @@ public class SingletonApp {
         System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +
                 "If you see different values, then 2 singletons were created (booo!!)" + "\n\n" +
                 "RESULT:" + "\n");
-        SingletonSingleThreaded singletonSingleThreaded = SingletonSingleThreaded.getInstance("HELLO!");
-        SingletonSingleThreaded anotherSingletonSingleThreaded = SingletonSingleThreaded.getInstance("GOOD BYE!");
 
-        System.out.println(singletonSingleThreaded.getValue());
-        System.out.println(anotherSingletonSingleThreaded.getValue());
+        // Checking how it would behave in multithreaded environment
 
+    }
+
+    static class ThreadHello implements Runnable {
+        @Override
+        public void run() {
+
+        }
+    }
+    static class ThreadGoodbye implements Runnable {
+        @Override
+        public void run() {
+
+        }
     }
 }
