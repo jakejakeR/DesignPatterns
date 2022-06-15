@@ -4,7 +4,7 @@ import lombok.Getter;
 
 public final class SingletonSingleThreaded {
 
-    private static SingletonSingleThreaded INSTANCE;
+    private static SingletonSingleThreaded instance;
     @Getter
     private String value;
     private SingletonSingleThreaded(String value) {
@@ -12,9 +12,9 @@ public final class SingletonSingleThreaded {
     }
 
     public static SingletonSingleThreaded getInstance(String value) {
-        if (INSTANCE == null) {
-            INSTANCE = new SingletonSingleThreaded(value);
+        if (instance == null) {
+            instance = new SingletonSingleThreaded(value);
         }
-        return INSTANCE;
+        return instance;
     }
 }
