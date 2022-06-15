@@ -11,6 +11,8 @@ package patterns.singleton;
     with calls to its static creation method.
 */
 
+import patterns.singleton.singlethreaded.SingletonSingleThreaded;
+
 /**
  * Good for managing a connection to a database
  */
@@ -26,19 +28,26 @@ public class SingletonApp {
                 "RESULT:" + "\n");
 
         // Checking how it would behave in multithreaded environment
+        Thread threadHello = new Thread(new ThreadHello());
+        Thread threadGoodbye = new Thread(new ThreadGoodbye());
+
+        threadHello.start();
+        threadGoodbye.start();
 
     }
 
     static class ThreadHello implements Runnable {
         @Override
         public void run() {
-
+            SingletonSingleThreaded singletonSingleThreaded = SingletonSingleThreaded.getInstance("HELLO!");
+            System.out.println(singletonSingleThreaded.getValue());
         }
     }
     static class ThreadGoodbye implements Runnable {
         @Override
         public void run() {
-
+            SingletonSingleThreaded singletonSingleThreaded = SingletonSingleThreaded.getInstance("GOODBYE!");
+            System.out.println(singletonSingleThreaded.getValue());
         }
     }
 }
