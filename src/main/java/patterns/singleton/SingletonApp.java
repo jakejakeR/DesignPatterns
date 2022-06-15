@@ -4,6 +4,6 @@ public class SingletonApp {
 
     public static void main(String[] args) {
 
-        System.out.println("Factory design pattern practice\r\n");
+        System.out.println("Singleton design pattern practice\r\n");
     }
 }
