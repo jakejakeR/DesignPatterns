@@ -15,8 +15,9 @@ public class DwarvenGoldmineFacade {
     private final List<DwarvenMineWorker> mineWorkers;
 
     public DwarvenGoldmineFacade() {
-        mineWorkers = List.of(new DwarvenCartOperator(),
+        mineWorkers = List.of(
                 new DwarvenGoldDigger(),
+                new DwarvenCartOperator(),
                 new DwarvenTunnelDigger());
     }
 
