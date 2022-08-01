@@ -13,7 +13,9 @@ public abstract class DwarvenMineWorker {
     public abstract void work();
     public abstract String name();
 
-
+    /**
+     * Perform actions.
+     */
     public void action(Action... actions) {
         Arrays.stream(actions).forEach(this::action);
     }
