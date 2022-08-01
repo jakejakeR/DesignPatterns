@@ -11,6 +11,7 @@ import java.util.Arrays;
 public abstract class DwarvenMineWorker {
 
     public abstract void work();
+
     public abstract String name();
 
     /**
@@ -21,7 +22,7 @@ public abstract class DwarvenMineWorker {
     }
 
     private void action(Action action) {
-        switch(action) {
+        switch (action) {
             case GO_TO_SLEEP -> goToSleep();
             case WAKE_UP -> wakeUp();
             case GO_HOME -> goHome();
