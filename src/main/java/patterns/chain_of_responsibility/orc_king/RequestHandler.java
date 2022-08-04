@@ -7,7 +7,7 @@ public abstract class RequestHandler {
 
     private final RequestHandler next;
 
-    public RequestHandler(RequestHandler next) {
+    protected RequestHandler(RequestHandler next) {
         this.next = next;
     }
 
