@@ -1,16 +1,19 @@
 package patterns.state;
 
-import patterns.state.animal_observer.Animal;
-import patterns.state.animal_observer.CalmState;
+import patterns.state.simple_device.Device;
+
+import java.util.Scanner;
 
 public class StateApp {
     public static void main(String[] args) {
-        Animal animal = new Animal();
-        animal.setState(new CalmState(animal));
-
-        for (int i = 0; i < 4; i++) {
-            animal.observe();
-            animal.onTimePassed();
+        Scanner scanner = new Scanner(System.in);
+        Device device = new Device();
+        while (scanner.hasNext()) {
+            if ("on".equals(scanner.next())) {
+                device.switchOn();
+            } else {
+                device.switchOff();
+            }
         }
     }
 }
